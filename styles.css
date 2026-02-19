@@ -1,0 +1,1361 @@
+:root {
+    --background-color:#87cefa;
+}
+
+html {
+        scroll-behavior: smooth;
+    }
+
+header {
+    background: linear-gradient(180deg, #60a5fa, #87cefa);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:40px;
+    gap:20px;
+}
+
+body {
+  background-color: var(--background-color);
+  margin:0;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+.header-title-h1 {
+    font-family: "Vast Shadow", serif;
+    font-weight: 400;
+    font-style: normal;
+
+    color:#1e3a8a;
+    margin:0;
+}
+
+.header-title-h2 {
+    font-family: "DM Serif Text", serif;
+    font-weight: 400;
+    font-style: normal;
+
+    color:#1e40af;
+    margin:5px 0;
+}
+
+.Hero {
+    background-color: var(--background-color);
+    height: 30rem;
+}
+
+.Skills {
+    background-color: var(--background-color);
+    height: 34rem;
+
+    /* border: 2px solid red; */
+}
+
+.Experience {
+    background-color: var(--background-color);
+    height: 30rem;
+
+    border-radius: 70% 10%;
+
+    background-image: linear-gradient(135deg, #006eff, #00DBDE, #08AEEA);
+
+    /* border: 2px solid greenyellow; */
+}
+
+.Education {
+    height: 20rem;
+
+    border-radius: 90%;
+
+    background-image: url(img/edu.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    /* border: 2px solid #1e3a8a; */
+}
+
+.Contact {
+    height: 16rem;
+
+    /* #87cefa, #60a5fa, #87cefa */
+    background: linear-gradient(180deg, #87cefa, #6aabf9, #87cefa);
+
+    /* border: 2px solid gold; */
+}
+
+nav > ul {
+    gap: 3rem;
+    display: flex;
+}
+
+.desktopMenu {
+    font-family: "Bungee Spice", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+    display: flex;
+    flex-wrap:wrap;
+
+    list-style: none;
+
+    justify-content: center;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.desktopMenu-item:hover {
+    transform: scale(1.1);
+
+    /* color: darkorange; */
+
+    background-image: linear-gradient(
+        90deg,
+        coral,
+        darkorange,
+        #9D50BB
+    );
+    
+    /* 将背景裁剪到文字的前景范围 */
+    /* 1. 先写带前缀的（用于兼容旧版 WebKit 浏览器） */
+    -webkit-background-clip: text;
+    /* 2. 【修复】紧接着写标准的，确保新浏览器使用标准属性 */
+    background-clip: text;
+
+    /* 3. 将文字的填充色设为透明，以显示裁剪的背景色 */
+    -webkit-text-fill-color: transparent;
+}
+
+.cta-item {
+    /* 1. 设置渐变色作为背景 */
+    background-image: linear-gradient(
+        45deg,
+        #9918E7,
+        #00A8FF,
+        #FF4500
+    );
+
+    /* 2. 将背景裁剪到文字的前景范围 */
+    -webkit-background-clip: text;
+    background-clip: text;
+  
+    /* 3. 将文字的填充色设为透明，以显示裁剪的背景色 */
+    -webkit-text-fill-color: transparent;
+
+    /* 平滑transform */
+    /* display: inline-block;
+    transition: 
+        transform 0.3s ease; */
+}
+
+.cta-item:hover {
+    /* 变大效果 */
+    transform: scale(1.5);
+  
+    /* 变色效果：使用三色渐变*/
+    background-image: linear-gradient(
+        90deg,
+        #FC00FF,
+        cyan,
+        #9D50BB
+    );
+}
+
+/* 平时不显示 */
+#desktopMenu {
+    display: none;
+}
+
+#hamburger {
+    border: 1px solid white;
+    height: 3rem;
+    width: 3rem;
+    margin: 1rem auto;
+    padding: 0;
+    cursor: pointer;
+    display: block;
+}
+
+.hamline {
+    width: 80%;
+    height: 2px;
+    background-color: white;
+}
+
+#mobileMenu {
+    position: relative;
+    color: white;
+    background: linear-gradient(360deg, #60a5fa, #87cefa);
+    /* z-index: 10; */
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all .200s ease-in-out;
+}
+
+.mobileMenu-item {
+    font-family: "Bungee Spice", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+    flex-wrap:wrap;
+    list-style: none;
+    justify-content: center;
+    width: fit-content;
+
+    line-height: 0.5rem;
+  
+    font-size: 1rem;
+    display: block;    
+    margin: 5% auto;
+}
+
+.mobileMenu-cta-item {
+
+    font-family: "Bungee Spice", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+    flex-wrap:wrap;
+    list-style: none;
+    justify-content: center;
+    width: fit-content;
+
+    line-height: 1rem;
+  
+    font-size: 1rem;
+    display: block;    
+    margin: 5% auto;
+
+    /* 1. 设置渐变色作为背景 */
+    background-image: linear-gradient(
+        45deg,
+        #9918E7,
+        #00A8FF,
+        #FF4500
+    );
+
+    /* 2. 将背景裁剪到文字的前景范围 */
+    -webkit-background-clip: text;
+    background-clip: text;
+  
+    /* 3. 将文字的填充色设为透明，以显示裁剪的背景色 */
+    -webkit-text-fill-color: transparent;
+}
+
+.section-text {
+    font-family: "Saira Stencil One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+    /* 样式化文字 */
+    font-size: 40px;
+    font-weight: bold;
+
+    /* 【注意】因为父元素已经是 flex 容器，这里不需要绝对定位，它会直接在前景居中 */
+    text-align: center;
+
+    color: #9918E7;
+
+    margin-top: 0;
+}
+
+
+/* Hero section flex config */
+.container-flex {
+    display: flex;
+    flex-wrap:wrap;
+
+    justify-content: flex-start; /* 水平居中 */
+    align-items: flex-start; /* 垂直居中 */
+  
+    /* 确保文字元素是前景层 */
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    background-image: url(img/Mission.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.overlay-text {
+    /* 样式化文字 */
+    font-size: 24px;
+    font-weight: bold;
+
+    /* (可选) 增加文字阴影以提高可读性 */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+
+    /* 【注意】因为父元素已经是 flex 容器，这里不需要绝对定位，它会直接在前景居中 */
+    text-align: center;
+
+    margin-left: 10px;
+
+    line-height: 3.5; /* 控制行间距 */
+
+
+    /* ---------------------------------- */
+    /* 字体颜色渐变的关键代码 */
+    /* ---------------------------------- */
+    /* 1. 设置渐变色作为背景 */
+    background-image: linear-gradient(
+        45deg, 
+        #00F5D4, /* 浅薄荷绿 */
+        #00A8FF, /* 天空蓝 */
+        #00FFFF  /* 亮青色/电光蓝 */
+    );
+
+    /* 柔和的白色光晕 */
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+  
+    /* 2. 将背景裁剪到文字的前景范围 */
+    -webkit-background-clip: text;
+    background-clip: text;
+  
+    /* 3. 将文字的填充色设为透明，以显示裁剪的背景色 */
+    -webkit-text-fill-color: transparent;
+}
+
+.overlay-text .first-line {
+    /* 基础样式，确保 span 能够正确应用背景和渐变 */
+    display: inline-block; 
+
+    background-image: linear-gradient(90deg, #FFD700, #FF4500); /* 金黄到猩红 */
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.overlay-text .last-line {
+    /* 基础样式，确保 span 能够正确应用背景和渐变 */
+    display: inline-block; 
+
+    background-image: linear-gradient(90deg, #1CD8D2, #93EDC7);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* 为每个 span 添加过渡效果，让变化更平滑 */
+.overlay-text span {
+    display: inline-block; /* 允许应用 transform 和 hover 效果 */
+    transition: 
+    transform 0.3s ease-in-out, /* 0.3秒平滑过渡 */
+    background-image 0.3s ease-in-out; /* 渐变色过渡（虽然不完美，但能平滑其他属性） */
+}
+
+/* 当鼠标悬停在任何一行文本上时 */
+.overlay-text .first-line:hover {
+        /* 变色效果：可以给它一个完全不同的，非常鲜明的渐变 */
+        background-image: linear-gradient(
+        45deg,          
+        #009245, /* 亮橙 */
+        #FCEE21
+    ); 
+}
+
+.overlay-text .last-line:hover {
+    /* 变大效果 */
+    transform: scale(1.5); 
+  
+    /* 变色效果：使用三色渐变 */
+    background-image: linear-gradient(
+        90deg,
+        #FC00FF,
+        #00DBDE,
+        #9D50BB
+    );
+}
+
+/* Skills section config */
+.desc-text-icon {
+    font-family: "Fredericka the Great", serif;
+
+    color:Snow;
+
+    font-size: 20px;
+
+    text-align: center;
+}
+
+.wrapper {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+
+    background-image: linear-gradient(45deg, #FC00FF, #00DBDE, #08AEEA);
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+
+    background-color: var(--background-color);
+    color:blue;
+
+    font-size: 120%;
+    font-weight: bold;
+    text-align: center;
+
+    /* border: 1px solid red; */
+}
+
+.box img {
+    background-color: transparent;
+    justify-self: center;
+    align-self: center;
+    margin: 20px;
+
+    width: 130px;
+    height: 50%;
+
+    transition: transform 0.3s ease;
+}
+
+.box img:hover
+{
+    transform: scale(1.2);
+}
+
+.t img:hover
+{
+    animation-name: rotate360;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    /* animation-delay: 0.5s; */
+    animation-iteration-count: infinite;
+}
+
+@keyframes rotate360 {
+    0% {
+        opacity: 0;
+        transform: rotate(0%);
+    }
+    50% {
+        opacity: 1;
+        transform: rotate(180deg);
+    }
+    100% {
+        opacity: 1;
+        transform: rotate(360deg);
+    }
+}
+
+.portfolio-link {
+    font-family: "Bungee Shade", sans-serif;
+
+    /* 1. 设置渐变色作为背景 */
+    background-image: linear-gradient(
+        45deg, 
+        purple,
+        blue,
+        red
+    );
+
+    /* 2. 将背景裁剪到文字的前景范围 */
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    /* 3. 将文字的填充色设为透明，以显示裁剪的背景色 */
+    -webkit-text-fill-color: transparent;
+}
+
+/* 针对 .box 内的 a 标签(Tableau图片)：消除 Flex 冲突，并让 img 能定位 */
+.box a {
+    display: contents; /* 推荐！这能让 a 标签在布局上“隐形”，并让 img 直接作为 Flex item */
+}
+
+.desc-text-skills {
+    font-family: "Tinos", serif;
+    font-weight: 400;
+    font-style: normal;
+
+    color:Snow;
+
+    font-size: 25px;
+
+    text-align: center;
+
+    line-height: 2;
+}
+
+.desc-text-skills span {
+    display: inline-block; /* 允许应用 transform 和 hover 效果 */
+    transition: 
+        transform 0.3s ease;
+}
+
+.desc-text-skills .last-line {
+    /* 确保 span 能够正确应用背景和渐变 */
+    display: inline-block; 
+
+    font-family: "Tinos", serif;
+    font-weight: 400;
+    font-style: normal;
+
+    font-size: 25px;
+
+    text-align: center;
+
+    line-height: 2;
+
+    /* ---------------------------------- */
+    /* 字体颜色渐变的关键代码 */
+    /* ---------------------------------- */
+    /* 1. 设置渐变色作为背景 */
+    background-image: linear-gradient(to right, blue, navy);
+
+    /* 柔和的白色光晕 */
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+  
+    /* 2. 将背景裁剪到文字的前景范围 */
+    -webkit-background-clip: text;
+    background-clip: text;
+  
+    /* 3. 将文字的填充色设为透明，以显示裁剪的背景色 */
+    -webkit-text-fill-color: transparent;
+}
+
+.desc-text-skills .last-line:hover {
+    /* 变大效果 */
+    transform: scale(1.1);
+
+    /* 变色效果：使用三色渐变 */
+    background-image: linear-gradient(90deg, blue, red, darkgreen);
+}
+
+/* Experience section config (slide) */
+/* I worked on this section while looking things up on Google at the same time. */
+.exp-title {
+    font-family: "Vast Shadow", serif;
+    font-weight: 400;
+    font-style: normal;
+
+    font-size: 32px;
+
+    color: navy;
+}
+
+.exp-time {
+    font-family: "Tinos", serif;
+
+    color:#1e40af;
+
+    font-size: 20px;
+
+    text-align: left;
+}
+
+.desc-text-exp {
+    font-family: "Tinos", serif;
+    font-weight: 400;
+    font-style: normal;
+
+    color:Snow;
+
+    font-size: 20px;
+
+    text-align: left;
+    margin-right: 5px;
+}
+
+.carousel-container-css {
+    width: 100%;
+    height: 300px; 
+    overflow: hidden;
+    position: relative;
+}
+
+.slides {
+    display: flex;
+    width: 400%; /* 4张幻灯片，所以是 400% */
+    height: 100%;
+    transition: transform 0.6s ease-in-out;
+}
+
+.slide {
+    width: 25%; /* 每张幻灯片占据 1/4 宽度 */
+    flex-shrink: 0;
+    height: 100%; /* 【关键】确保高度填充父级轨道 */
+
+    /* 【核心】使单个 Slide 成为 Flex 容器 */
+    display: flex; 
+    align-items: center; /* 让图片和文字在垂直方向上居中对齐 */
+
+     /* 内部边距 */
+    /* padding: 10px; */
+    box-sizing: border-box; /* 确保 padding 不会增加 slide 的总宽度 */
+}
+
+.slide-image img {
+    /* 确保图片填满图片容器 */
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 保持比例并覆盖容器 */
+    display: block;
+}
+
+.slide-content {
+    /* 【关键】让文字内容占据 slide 的右侧部分 (剩余的 60%) */
+    width: 40%;
+    padding-left: 50px; /* 在图片和文字之间增加一些间距 */
+}
+
+/* 隐藏 radio input 元素 */
+.carousel-container-css input {
+    display: none;
+}
+
+/* 核心 CSS 切换逻辑 */
+#slide-1:checked ~ .slides {
+    transform: translateX(0); /* 显示第一张 */
+}
+
+#slide-2:checked ~ .slides {
+    transform: translateX(-25%); /* 移动 1/4 宽度，显示第二张 */
+}
+
+#slide-3:checked ~ .slides {
+    transform: translateX(-50%); /* 移动 2/4 宽度，显示第三张 */
+}
+
+#slide-4:checked ~ .slides {
+    transform: translateX(-75%); /* 移动 3/4 宽度，显示第四张 */
+}
+
+/* navigation-manual 点击 label 即可选中对应的 radio */
+/* 导航按钮容器样式 */
+.navigation-manual {
+    position: absolute;
+    bottom: 10px; /* 放在轮播图底部 */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* 小圆点之间的间距 */
+    z-index: 10; /* 确保它在图片之上 */
+}
+
+/* 小圆点按钮样式 */
+.manual-btn {
+    /* 制作圆形 */
+    border: 2px solid #fff; /* 边框 */
+    padding: 0;
+    width: 12px; /* 宽度 */
+    height: 12px; /* 高度 */
+    border-radius: 50%; /* 圆形 */
+    cursor: pointer; /* 鼠标悬停时显示指针 */
+    transition: background-color 0.3s; /* 方便做 hover 效果，缓慢填充 */
+}
+
+/* 鼠标悬停在小圆点上时的样式 */
+.manual-btn:hover {
+    background-color: rgba(255, 255, 255, 0.5); /* 半透明填充 */
+}
+
+/* 【关键】选中状态时的样式：填充颜色 */
+/* 当 radio 被选中时，使用通用兄弟选择器(~)选中对应的 label */
+#slide-1:checked ~ .navigation-manual .manual-btn:nth-child(1),
+#slide-2:checked ~ .navigation-manual .manual-btn:nth-child(2),
+#slide-3:checked ~ .navigation-manual .manual-btn:nth-child(3),
+#slide-4:checked ~ .navigation-manual .manual-btn:nth-child(4) {
+    background-color: #fff; /* 选中时填充白色 */
+}
+
+a {
+    text-decoration: none;
+    font-size: x-large;
+}
+
+a[data-tooltip] {
+    position: relative;
+}
+
+a[data-tooltip]:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    top: 100%;
+    left: 50%;
+
+    transform: translateX(-50%);
+    white-space: nowrap;
+    z-index: 10;
+
+    font-size:large;
+}
+
+/* Eduction section */
+.wrapper_edu {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+
+/* 使用类选择器 .responsive-div */
+.responsive-div-edu {
+    /* 1. 核心：设置为 Flex 容器 */
+    display: flex;
+    
+    /* 2. 水平居中 (对齐 <a> 标签) */
+    justify-content: center;
+    
+    /* 3. 垂直居中 (对齐 <a> 标签) */
+    align-items: center;
+    
+    /* 确保容器有高度 */
+    height: 100px; /* 示例高度 */
+}
+
+/* 针对 img 样式（使用后代选择器） */
+.responsive-div-edu img {
+    /* 【核心 1】让图片的最大宽度不超过其父容器（<a>标签） */
+    max-width: 100%;
+    
+    /* 【核心 2】让图片的高度根据宽度等比例缩放 */
+    height: auto; 
+    
+    /* 保持其他样式 */
+    width: auto; /* 保持 width: auto; 意味着图片将由 max-width: 100% 控制 */
+    margin: 0; 
+    display: block;
+}
+
+/* Contact section */
+.wrapper_con {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+
+    /* border: 2px solid coral; */
+}
+
+.responsive-div-con {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+
+    flex-shrink: 0;
+
+    /* ... 宽度、高度等保持不变 ... */
+    height: 30%;
+
+    /* 【核心】使单个 Slide 成为 Flex 容器 */
+    display: flex; 
+    align-items: center; /* 让图片和文字在垂直方向上居中对齐 */
+
+     /* 内部边距 */
+    box-sizing: border-box; /* 确保 padding 不会增加 slide 的总宽度 */
+
+    /* border: 2px solid green; */
+    /* background-image: linear-gradient(90deg, #1CD8D2, #93EDC7); */
+}
+
+.responsive-div-con a {
+    /* 1. 【核心】将 a 标签设置为行内块级元素 */
+    display: inline-block;
+    
+    /* 2. 移除 a 标签可能产生的默认边距或填充 */
+    padding: 0;
+    margin: 0;
+    
+    /* 3. 确保 a 标签内没有额外的空白或行高 */
+    line-height: 0;
+
+    width: 20%;
+    height: 200%;
+
+    /* border: 2px solid red; */
+}
+
+.responsive-div-con a >
+img {
+    width: 100%;
+    height: 100%;
+
+    /* 确保图片本身没有边距 */
+    /* margin: 0; 
+    padding: 0; */
+
+    /* border: 2px solid greenyellow; */
+}
+
+.responsive-div-con >
+h3 {
+    font-family: "Fredericka the Great", serif;
+    font-weight: 400;
+    font-style: normal;
+
+    color: snow;
+    text-align: center;
+
+    margin-top: 0;
+
+    /* border: 2px solid greenyellow; */
+}
+
+
+footer {
+    height: 20px;
+    color: white;
+    text-align: center;
+    padding-top: 3rem;
+}
+
+.desc-feet {
+    font-family: "Tinos", serif;
+
+    color:Snow;
+
+    font-size: 20px;
+
+    text-align: center;
+}
+
+
+
+
+
+
+@media (max-width: 493px) {
+    .wrapper {
+        display: grid;
+        grid-gap: 1px;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+
+    .box {
+        font-size: 80%;
+    }
+
+    .box img {
+        background-color: transparent;
+        justify-self: center;
+        align-self: center;
+        margin: 2px;
+
+        width: 88px;
+        height: 70%;
+    }
+}
+
+@media(min-width:651px){
+    #mobileMenu, #hamburger {
+        display: none;
+    }
+    #desktopMenu {
+        display: flex;
+        justify-content: space-around;
+    }
+    body {
+        max-width: 1920px;
+    }
+    .mobileMenu-item {
+        margin: 0;
+    }
+}
+
+@media(max-width: 940px) {
+    .wrapper {
+        display: grid;
+        grid-gap: 1px;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .box {
+        font-size: 120%;
+    }
+
+    .box img {
+        background-color: transparent;
+        justify-self: center;
+        align-self: center;
+        margin: 20px;
+
+        width: 130px;
+        height: 50%;
+    }
+
+    .desc-text {
+        font-family: "Saira Stencil One", sans-serif;
+
+        font-weight: 200;
+        font-style: normal;
+
+
+        font-size: 20px;
+
+        text-align: center;
+    }
+}
+
+@media(max-width: 920px) {
+    .wrapper {
+        display: grid;
+        grid-gap: 1px;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+
+    .box {
+        font-size: 120%;
+    }
+
+    .box img {
+        background-color: transparent;
+        justify-self: center;
+        align-self: center;
+        margin: 20px;
+
+        width: 130px;
+        height: 50%;
+    }
+
+    .desc-text {
+        font-family: "Saira Stencil One", sans-serif;
+
+        font-weight: 200;
+        font-style: normal;
+
+
+        font-size: 20px;
+
+        text-align: center;
+    }
+
+    a[data-tooltip]:hover::after {
+        content: attr(data-tooltip);
+        position: absolute;
+        color: white;
+        padding: 5px;
+        border-radius: 5px;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        white-space: nowrap;
+        z-index: 10;
+
+        font-size:medium;
+    }
+}
+
+/* 缩窄图标 */
+@media(max-width: 830px) {
+    .wrapper {
+        display: grid;
+        grid-gap: 1px;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+
+    .box {
+        font-size: 120%;
+    }
+
+    .box img {
+        background-color: transparent;
+        justify-self: center;
+        align-self: center;
+        margin: 20px;
+
+        width: 100px;
+        height: 50%;
+    }
+
+    .portfolio-link {
+        font-family: "Bungee Shade", sans-serif;
+
+        font-size: 20px;
+
+        /* 1. 设置渐变色作为背景 */
+        background-image: linear-gradient(
+            45deg, 
+            purple,
+            blue,
+            red
+        );
+
+        /* 2. 将背景裁剪到文字的前景范围 */
+        -webkit-background-clip: text;
+        background-clip: text;
+    
+        /* 3. 将文字的填充色设为透明，以显示裁剪的背景色 */
+        -webkit-text-fill-color: transparent;
+    }
+
+    .desc-text {
+        font-family: "Saira Stencil One", sans-serif;
+
+        font-weight: 200;
+        font-style: normal;
+
+
+        font-size: 20px;
+
+        text-align: center;
+    }
+
+    a[data-tooltip]:hover::after {
+        content: attr(data-tooltip);
+        position: absolute;
+        color: white;
+        padding: 5px;
+        border-radius: 5px;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        white-space: nowrap;
+        z-index: 10;
+
+        font-size:small;
+    }
+}
+
+/* 去掉skills文字 */
+@media(max-width: 740px) {
+    .wrapper {
+        display: grid;
+        grid-gap: 1px;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+
+    .box {
+        font-size: 80%;
+    }
+
+    .box img {
+        background-color: transparent;
+        justify-self: center;
+        align-self: center;
+        margin: 20px;
+
+        width: 100px;
+        height: 50%;
+    }
+
+    .desc-text {
+        display: none;
+    }
+
+    .desc-text-skills {
+        display: none;
+    }
+
+    .exp-title {
+        font-family: "Vast Shadow", serif;
+        font-weight: 400;
+        font-style: normal;
+
+        font-size: 20px;
+
+        color: navy;
+    }
+
+    .exp-time {
+        font-family: "Fredericka the Great", serif;
+
+        color:#1e40af;
+
+        font-size: 15px;
+
+        text-align: left;
+    }
+
+    .desc-text-exp {
+        color:Snow;
+
+        font-size: 15px;
+
+        text-align: left;
+        margin-right: 5px;
+    }
+}
+
+/* 减小Mission的行间距 */
+@media(max-width: 645px) {
+    
+
+    a[data-tooltip]:hover::after {
+        content: attr(data-tooltip);
+        position: absolute;
+        color: white;
+        padding: 5px;
+        border-radius: 5px;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        white-space: nowrap;
+        z-index: 10;
+
+        font-size:10px;
+    }
+}
+
+/* 减小Mission的行间距 */
+@media(max-width: 645px) {
+    .overlay-text {
+        /* 样式化文字 */
+        font-size: 24px;
+        font-weight: bold;
+        /* (可选) 增加文字阴影以提高可读性 */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+
+        /* 【注意】因为父元素已经是 flex 容器，这里不需要绝对定位，它会直接在前景居中 */
+        text-align: center;
+
+        margin-left: 10px;
+
+        line-height: 3.0; /* 控制行间距 */
+
+
+        /* ---------------------------------- */
+        /* 字体颜色渐变的关键代码 */
+        /* ---------------------------------- */
+    
+        /* 1. 设置渐变色作为背景 */
+        background-image: linear-gradient(
+            45deg, 
+            #00F5D4, /* 浅薄荷绿 */
+            #00A8FF, /* 天空蓝 */
+            #00FFFF  /* 亮青色/电光蓝 */
+        );
+
+        /* 柔和的白色光晕 */
+        text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+    
+        /* 2. 将背景裁剪到文字的前景范围 */
+        -webkit-background-clip: text;
+        background-clip: text;
+    
+        /* 3. 将文字的填充色设为透明，以显示裁剪的背景色 */
+        -webkit-text-fill-color: transparent;
+    }
+
+    a[data-tooltip]:hover::after {
+        content: attr(data-tooltip);
+        position: absolute;
+        color: white;
+        padding: 5px;
+        border-radius: 5px;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        white-space: nowrap;
+        z-index: 10;
+
+        font-size:10px;
+    }
+}
+
+/* 再次减小Mission的行间距 */
+@media(max-width: 546px) {
+    .overlay-text {
+        /* 样式化文字 */
+        font-size: 24px;
+        font-weight: bold;
+        /* (可选) 增加文字阴影以提高可读性 */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+
+        /* 【注意】因为父元素已经是 flex 容器，这里不需要绝对定位，它会直接在前景居中 */
+        text-align: center;
+
+        margin-left: 10px;
+
+        line-height: 3.0; /* 控制行间距 */
+
+
+        /* ---------------------------------- */
+        /* 字体颜色渐变的关键代码 */
+        /* ---------------------------------- */
+    
+        /* 1. 设置渐变色作为背景 */
+        background-image: linear-gradient(
+            45deg, 
+            #00F5D4, /* 浅薄荷绿 */
+            #00A8FF, /* 天空蓝 */
+            #00FFFF  /* 亮青色/电光蓝 */
+        );
+
+        /* 柔和的白色光晕 */
+        text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+    
+        /* 2. 将背景裁剪到文字的前景范围 */
+        -webkit-background-clip: text;
+        background-clip: text;
+    
+        /* 3. 将文字的填充色设为透明，以显示裁剪的背景色 */
+        -webkit-text-fill-color: transparent;
+    }
+
+    a[data-tooltip]:hover::after {
+        display: none;
+    }
+}
+
+@media(max-width: 500px) {
+    .exp-title {
+        display: none;
+    }
+
+    .exp-time {
+        display: none;
+    }
+
+    .desc-text-exp {
+        display: none;
+    }
+
+    .responsive-div-edu img {
+        /* 【核心 1】让图片的最大宽度不超过其父容器（<a>标签） */
+        max-width: 100%;
+        
+        /* 【核心 2】让图片的高度根据宽度等比例缩放 */
+        height: auto; 
+        
+        /* 保持其他样式 */
+        width:95%;
+        margin: 0; 
+        display: block;
+    }
+}
+
+@media(max-width: 415px) {
+    .overlay-text {
+        /* 样式化文字 */
+        font-size: 24px;
+        font-weight: bold;
+        /* (可选) 增加文字阴影以提高可读性 */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+
+        /* 【注意】因为父元素已经是 flex 容器，这里不需要绝对定位，它会直接在前景居中 */
+        text-align: center;
+
+        margin-left: 10px;
+
+        line-height: 2.3; /* 控制行间距 */
+
+
+        /* ---------------------------------- */
+        /* 字体颜色渐变的关键代码 */
+        /* ---------------------------------- */
+    
+        /* 1. 设置渐变色作为背景 */
+        background-image: linear-gradient(
+            45deg, 
+            #00F5D4, /* 浅薄荷绿 */
+            #00A8FF, /* 天空蓝 */
+            #00FFFF  /* 亮青色/电光蓝 */
+        );
+
+        /* 柔和的白色光晕 */
+        text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+    
+        /* 2. 将背景裁剪到文字的前景范围 */
+        -webkit-background-clip: text;
+        background-clip: text;
+    
+        /* 3. 将文字的填充色设为透明，以显示裁剪的背景色 */
+        -webkit-text-fill-color: transparent;
+    }
+
+    .exp-title {
+        display: none;
+    }
+
+    .exp-time {
+        display: none;
+    }
+
+    .desc-text-exp {
+        display: none;
+    }
+
+}
+
+@media(max-width: 378px) {
+    .exp-title {
+        display: none;
+    }
+
+    .exp-time {
+        display: none;
+    }
+
+    .desc-text-exp {
+        display: none;
+    }
+
+    .section-text {
+        display: none;
+    }
+
+    .Education {
+        height: 10rem;
+    }
+}
+
+@media(max-width: 360px) {
+    .overlay-text {
+        /* 样式化文字 */
+        font-size: 24px;
+        font-weight: bold;
+        /* (可选) 增加文字阴影以提高可读性 */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+
+        /* 【注意】因为父元素已经是 flex 容器，这里不需要绝对定位，它会直接在前景居中 */
+        text-align: center;
+
+        margin-left: 10px;
+
+        line-height: 2.0; /* 控制行间距 */
+
+
+        /* ---------------------------------- */
+        /* 字体颜色渐变的关键代码 */
+        /* ---------------------------------- */
+    
+        /* 1. 设置渐变色作为背景 */
+        background-image: linear-gradient(
+            45deg, 
+            #00F5D4, /* 浅薄荷绿 */
+            #00A8FF, /* 天空蓝 */
+            #00FFFF  /* 亮青色/电光蓝 */
+        );
+
+        /* 柔和的白色光晕 */
+        text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+    
+        /* 2. 将背景裁剪到文字的前景范围 */
+        -webkit-background-clip: text;
+        background-clip: text;
+    
+        /* 3. 将文字的填充色设为透明，以显示裁剪的背景色 */
+        -webkit-text-fill-color: transparent;
+    }
+
+    .exp-title {
+        display: none;
+    }
+
+    .exp-time {
+        display: none;
+    }
+
+    .desc-text-exp {
+        display: none;
+    }
+
+    .section-text {
+        display: none;
+    }
+
+    .Education {
+        height: 10rem;
+    }
+}
