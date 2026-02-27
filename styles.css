@@ -445,6 +445,17 @@ nav > ul {
     }
 }
 
+.portfolio-link:hover {
+    transition: 
+        transform 0.3s ease;
+        
+    /* 变大效果 */
+    transform: scale(1.1);
+
+    /* 变色效果：使用三色渐变 */
+    background-image: linear-gradient(90deg, blue, red, darkgreen);
+}
+
 .portfolio-link {
     font-family: "Bungee Shade", sans-serif;
 
