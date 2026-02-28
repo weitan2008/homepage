@@ -65,18 +65,6 @@ h1 {
     /* border: 2px solid greenyellow; */
 }
 
-.Education {
-    height: 20rem;
-
-    border-radius: 90%;
-
-    background-image: url(img/edu.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-
-    /* border: 2px solid #1e3a8a; */
-}
-
 .Contact {
     height: 16rem;
 
@@ -703,41 +691,124 @@ a[data-tooltip]:hover::after {
     font-size:large;
 }
 
-/* Eduction section */
-.wrapper_edu {
-    display: grid;
-    grid-gap: 5px;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-}
+/* ==========================================================================
+   Education Section - 最终精简版
+   ========================================================================== */
 
-/* 使用类选择器 .responsive-div */
-.responsive-div-edu {
-    /* 1. 核心：设置为 Flex 容器 */
+.Education {
+    /* 缩小顶部间距，让它靠近上一个 Section */
+    padding: 20px 5% 100px 5%; 
     display: flex;
-    
-    /* 2. 水平居中 (对齐 <a> 标签) */
-    justify-content: center;
-    
-    /* 3. 垂直居中 (对齐 <a> 标签) */
+    flex-direction: column;
     align-items: center;
-    
-    /* 确保容器有高度 */
-    height: 100px; /* 示例高度 */
+    background: transparent;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-/* 针对 img 样式（使用后代选择器） */
-.responsive-div-edu img {
-    /* 【核心 1】让图片的最大宽度不超过其父容器（<a>标签） */
-    max-width: 100%;
-    
-    /* 【核心 2】让图片的高度根据宽度等比例缩放 */
-    height: auto; 
-    
-    /* 保持其他样式 */
-    width: auto; /* 保持 width: auto; 意味着图片将由 max-width: 100% 控制 */
-    margin: 0; 
-    display: block;
+/* 标题样式：移除颜色定义，恢复原网页颜色 */
+.section-text {
+    font-family: "Saira Stencil One", sans-serif;
+    font-size: 48px;
+    /* color 已删除，将继承你原有的样式 */
+    margin-top: 0;      
+    margin-bottom: 50px; 
+    text-align: center;
 }
+
+.wrapper_edu {
+    display: flex;
+    flex-direction: row; 
+    justify-content: center; 
+    align-items: center;
+    gap: 60px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.responsive-div-edu {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+/* 隐藏黑色文字 */
+.responsive-div-edu h3 {
+    display: none; 
+}
+
+/* 图片控制 */
+.responsive-div-edu img {
+    display: block;
+    width: auto;
+    height: 120px; 
+    object-fit: contain;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.edu-logo-bistu { max-width: 400px; }
+.edu-logo-google { max-width: 230px; }
+.edu-logo-nscc { max-width: 200px; }
+
+.responsive-div-edu img:hover {
+    transform: scale(1.15) translateY(-5px);
+}
+
+/* ==========================================================================
+   Tooltip - 浅蓝色清透风格
+   ========================================================================== */
+
+.responsive-div-edu a {
+    position: relative;
+    text-decoration: none;
+}
+
+.responsive-div-edu a:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: -45px;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    /* --- 核心修改：更浅、更清透的蓝色方案 --- */
+    background-color: rgba(59, 130, 246, 0.85); /* 柔和的亮蓝色，带透明度 */
+    color: #ffffff; 
+    border: 1px solid rgba(255, 255, 255, 0.3); 
+    /* -------------------------------------- */
+    
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: sans-serif;
+    white-space: nowrap;
+    z-index: 100;
+    /* 柔和的淡蓝色投影 */
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+    pointer-events: none;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translate(-50%, 10px); }
+    to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+/* 移动端适配 */
+@media (max-width: 900px) {
+    .Education {
+        padding-top: 10px;
+    }
+    .wrapper_edu {
+        flex-direction: column;
+        gap: 60px;
+    }
+}
+
+
+
 
 /* Contact section */
 .wrapper_con {
