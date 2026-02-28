@@ -691,12 +691,15 @@ a[data-tooltip]:hover::after {
     font-size:large;
 }
 
+
+
+
 /* ==========================================================================
-   Education Section - 最终精简版
+   Education Section - 常驻彩色标签版 (无背景图/无椭圆)
    ========================================================================== */
 
 .Education {
-    /* 缩小顶部间距，让它靠近上一个 Section */
+    /* 缩小顶部间距，保持紧凑 */
     padding: 20px 5% 100px 5%; 
     display: flex;
     flex-direction: column;
@@ -706,11 +709,9 @@ a[data-tooltip]:hover::after {
     box-sizing: border-box;
 }
 
-/* 标题样式：移除颜色定义，恢复原网页颜色 */
 .section-text {
     font-family: "Saira Stencil One", sans-serif;
     font-size: 48px;
-    /* color 已删除，将继承你原有的样式 */
     margin-top: 0;      
     margin-bottom: 50px; 
     text-align: center;
@@ -720,21 +721,21 @@ a[data-tooltip]:hover::after {
     display: flex;
     flex-direction: row; 
     justify-content: center; 
-    align-items: center;
+    /* 改为 flex-start 确保标签高度不一时依然整齐 */
+    align-items: flex-start;
     gap: 60px;
     width: 100%;
     max-width: 1200px;
 }
 
 .responsive-div-edu {
-    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     flex: 1;
 }
 
-/* 隐藏黑色文字 */
+/* 隐藏原本可能的 h3 文字 */
 .responsive-div-edu h3 {
     display: none; 
 }
@@ -743,67 +744,66 @@ a[data-tooltip]:hover::after {
 .responsive-div-edu img {
     display: block;
     width: auto;
-    height: 120px; 
+    height: 100px; /* 稍微调小一点，给下方的常驻标签留出呼吸空间 */
     object-fit: contain;
+    margin-bottom: 20px; /* Logo 与标签之间的间距 */
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .edu-logo-bistu { max-width: 400px; }
-.edu-logo-google { max-width: 230px; }
+.edu-logo-google { max-width: 200px; }
 .edu-logo-nscc { max-width: 200px; }
 
 .responsive-div-edu img:hover {
-    transform: scale(1.15) translateY(-5px);
+    transform: scale(1.1) translateY(-5px);
 }
 
 /* ==========================================================================
-   Tooltip - 浅蓝色清透风格
+   常驻标签样式 - 继承自原 Tooltip 风格
    ========================================================================== */
 
-.responsive-div-edu a {
-    position: relative;
-    text-decoration: none;
-}
-
-.responsive-div-edu a:hover::after {
-    content: attr(data-tooltip);
-    position: absolute;
-    bottom: -45px;
-    left: 50%;
-    transform: translateX(-50%);
-    
-    /* --- 核心修改：更浅、更清透的蓝色方案 --- */
-    background-color: rgba(59, 130, 246, 0.85); /* 柔和的亮蓝色，带透明度 */
+.edu-tag {
+    /* --- 完全继承你要求的浅蓝色清透风格 --- */
+    background-color: rgba(59, 130, 246, 0.85); /* 柔和亮蓝，带透明度 */
     color: #ffffff; 
     border: 1px solid rgba(255, 255, 255, 0.3); 
-    /* -------------------------------------- */
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2); /* 柔和蓝色投影 */
     
     padding: 8px 18px;
     border-radius: 8px;
     font-size: 14px;
     font-weight: 500;
     font-family: sans-serif;
-    white-space: nowrap;
-    z-index: 100;
-    /* 柔和的淡蓝色投影 */
-    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
-    pointer-events: none;
-    animation: fadeIn 0.3s ease;
+    text-align: center;
+    line-height: 1.4;
+    max-width: 300px; /* 限制宽度防止文字过长换行难看 */
+    margin: 0;
+    pointer-events: auto; /* 常驻标签不需要穿透点击 */
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translate(-50%, 10px); }
-    to { opacity: 1; transform: translate(-50%, 0); }
+/* 强调平均分 98% 的样式 */
+.edu-tag strong {
+    font-weight: 700;
+    color: darkorange; /* 微微的浅米黄，让分数在蓝色背景上更出挑 */
+    margin-left: 2px;
+}
+
+/* 移除旧的 Tooltip 伪元素，防止意外触发 */
+.responsive-div-edu a::after {
+    content: none !important;
+    display: none !important;
 }
 
 /* 移动端适配 */
 @media (max-width: 900px) {
-    .Education {
-        padding-top: 10px;
-    }
     .wrapper_edu {
         flex-direction: column;
         gap: 60px;
+        align-items: center;
+    }
+    .edu-tag {
+        font-size: 13px;
+        padding: 6px 14px;
     }
 }
 
